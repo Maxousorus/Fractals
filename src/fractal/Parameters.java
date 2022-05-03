@@ -22,10 +22,10 @@ public class Parameters {
 
     public static final Graphics g2d  = null;
 
-    public static final Color[] seaGradient = Do.makeGradient(new Color(0,0,128), new Color(0,255,255), 20);
-    public static final Color[] sandGradient = Do.makeGradient(new Color(202,205,0), new Color(255,237,0), 5);
-    public static final Color[] grassGradient = Do.makeGradient(new Color(106,234,0), new Color(58,129,0), 15);
-    public static final Color[] mountainGradient = Do.makeGradient(new Color(153,153,153), new Color(255,255,255), 10);
+    public static final Color[] seaGradient = Do.makeGradient(new Color(0,255,255),new Color(0,0,128), 20);
+    public static final Color[] sandGradient = Do.makeGradient(new Color(255,237,0),new Color(202,205,0), 5);
+    public static final Color[] grassGradient = Do.makeGradient(new Color(58,129,0),new Color(106,234,0), 15);
+    public static final Color[] mountainGradient = Do.makeGradient(new Color(255,255,255),new Color(153,153,153), 10);
 
     public static final Color[][] allGradients = {seaGradient, sandGradient, grassGradient, mountainGradient};
 
