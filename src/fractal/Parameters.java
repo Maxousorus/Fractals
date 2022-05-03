@@ -9,7 +9,7 @@ public class Parameters {
     public static final int m = 1; //maille (0 -> 3) 
     public static final int p = (int)Math.pow(m, 7-m); //pas 
     public static final int hauteur = 60; //(>=60)
-    public static final int d = 3; //deviation (inférieur ou égal au pas pour realisme)
+    public static final int d = 2; //deviation (inférieur ou égal au pas pour realisme)
     public static final int l = 1920; //(recommandation : <3000)
 
     public static int g = 12354; // graine (0 = aléatoire)
@@ -22,7 +22,7 @@ public class Parameters {
 
     public static final Graphics g2d  = null;
 
-    public static final Color[] seaGradient = Do.makeGradient(new Color(0,255,255),new Color(0,0,128), 20);
+    public static final Color[] seaGradient = Do.makeGradient(new Color(0,255,255),new Color(0,0,128), 15);
     public static final Color[] sandGradient = Do.makeGradient(new Color(202,205,0),new Color(255,237,0), 5);
     public static final Color[] grassGradient = Do.makeGradient(new Color(58,129,0),new Color(106,234,0), 15);
     public static final Color[] mountainGradient = Do.makeGradient(new Color(255,255,255),new Color(153,153,153), 10);
