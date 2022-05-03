@@ -32,7 +32,7 @@ public class Do {
         return colorlist;
     }
 
-    public static Color[] mergeColorList(Color[][] colorlist){
+    public static Color[] mergeColorLists(Color[][] colorlist){
         int nbColors = 0;
         for(int i = 0; i < colorlist.length; i++){
             nbColors += colorlist[i].length;
