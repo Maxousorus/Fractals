@@ -11,6 +11,19 @@ public class Do {
         g.drawRect(x, y, 1, 1);
     }
 
+    public static void draw(Graphics g,int[] move, int x2, int y2, int c) {
+        Color color = getColor(c);
+        g.setColor(color);
+        g.drawLine(move[0], move[1], x2, y2);
+    }
+
+    public static int[] move(int x, int y) {
+        int[] move = new int[2];
+        move[0] = x;
+        move[1] = y;
+        return move;
+    }
+
     public static Color getColor(int c){
         Color[] colorlist = Parameters.colorList;
         return colorlist[c % Parameters.nbcolor];
@@ -187,5 +200,27 @@ public class Do {
         return surface;
     }
 
+    //lignes 850-970
+    public static int[][] filDeFer(Graphics2D g, int maille, int hauteur, int taille, Random random, int[][] surface) {
+        int[] move = new int[2];
+        int[] c = new int[320];
+        int o = 160;
+        int k = 0;
+        move = move(0, 40);
+        draw(g, move, 320, 0, 1);
+        draw(g, move, 640, 40, 1);
 
+        for(int y = 0; y < 128; y = y+2){
+            move(o*4-320, c[o+k]);
+            k = 0;
+            o = 160-y;
+            if(o<0)
+                k = -o;
+            
+            for(int x = k; x < 128; x = x+2){
+                taille = surface[x][y] + y + x;
+                hauteur = 
+            }
+        }
+    }
 }
