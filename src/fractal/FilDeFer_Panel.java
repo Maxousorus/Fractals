@@ -8,8 +8,7 @@ import javax.swing.JPanel;
 public class FilDeFer_Panel extends JPanel{
 
     private int a = Parameters.a,
-                b = Parameters.b,
-                c = Parameters.c;
+                b = Parameters.b;
     
     private int m = Parameters.m; //maille (0 -> 3) 
     private int p = (int)Math.pow(m, 7-m); //pas 

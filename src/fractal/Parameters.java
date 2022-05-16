@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Parameters {
 
-    public static final int a = 0,b = 0,c = 0;
+    public static final int a = 0,b = 0;
     
     public static final int m = 1; //maille (0 -> 3) 
     public static final int p = (int)Math.pow(m, 7-m); //pas 
@@ -18,6 +18,8 @@ public class Parameters {
     public static final int[][] h = new int[l+1][l+1];
 
     public static int[][] cF; //Grille apres calcul fractal
+
+    public static int[] c; //Tableau nommé c
 
     public static final int choose = -2;
 

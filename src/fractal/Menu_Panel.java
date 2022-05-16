@@ -10,6 +10,7 @@ public class Menu_Panel extends JPanel{
 
     private JButton newSurfaceButton;
     private JButton filDeFerButton;
+    private JButton stratesButton;
 
     public Menu_Panel(Menu menu){
 
@@ -36,6 +37,18 @@ public class Menu_Panel extends JPanel{
         filDeFerButton.setBounds(0, 300, 400, 150);
 
         add(filDeFerButton);
+
+        stratesButton = new JButton("Strates");
+
+        stratesButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                menu.openStrates();
+            }
+        });
+
+        stratesButton.setBounds(0, 450, 400, 150);
+
+        add(stratesButton);
 
         
     }

@@ -239,6 +239,54 @@ public class Do {
             draw(g, (o+x)*4-322, fh, filDeFerColor);
             fh = h;
         }
+        Parameters.c = c;
+        return surface;
+    }
+
+    public static int[][] strates(Graphics2D g, int maille, int hauteur, int deviation, int taille, Random random, int[][] surface) {
+        int n = hauteur / Parameters.nbcolor;
+        int nm = n*4;
+        int[][] h = Parameters.cF;
+        int[] c = Parameters.c;
+        for(int i = 0; i < 80; i++){
+            hauteur = h[0][i] + i;
+            if(hauteur < nm+i)
+                hauteur = nm+i;
+            c[80-i] = hauteur-2;
+            hauteur = h[i][0] + i;
+            if(hauteur < nm+i)
+                hauteur = nm+i;
+            c[80+i] = hauteur-2;
+        }
+
+        int nmx;
+        int a;
+
+        for(int x = 0; x < 128; x++){
+            for(int y = 0; y < 127; y++){
+                nmx = nm + x + y;
+                a = 80 - y + x;
+                if(a < 0 || a > 319){
+                    a = 0;
+                }
+                hauteur = h[x][y] + x + y;
+                int couleur = h[x][y];
+                if(couleur > Parameters.nbcolor){
+                    couleur = Parameters.nbcolor;
+                }
+                if(hauteur < nmx){
+                    hauteur = nmx;
+                }
+                if(hauteur <= c[a]){
+                    plot(g, a*4, c[a], 0);
+                }
+                if(hauteur > c[a]){
+                    move(a*4, c[a]+2);
+                    //ici
+                }
+                draw(g, a*4, hauteur, couleur); // peut etre à mettre dans le IF ci dessus
+            }
+        }
         return surface;
     }
 }
