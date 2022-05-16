@@ -220,6 +220,7 @@ public class Do {
         draw(g, 320, 0, filDeFerColor);
         draw(g, 640, 40, filDeFerColor);
         int[] c = new int[320];
+        int h = hauteur;
         int fh = 0;
         for(int y = 0; y < 128;y = y+2){ //ligne 890
             move(o*4-320, c[o+k]);
@@ -231,12 +232,12 @@ public class Do {
             int x;
             for(x = k; x < 128; x = x + 2){
                 taille = surface[x][y] + x + y;
-                hauteur = max(c[x+o], taille);
-                c[x+o] = hauteur;
-                draw(g, (o+x)*4-320, hauteur, filDeFerColor);
+                h = max(c[x+o], taille);
+                c[x+o] = h;
+                draw(g, (o+x)*4-320, h, filDeFerColor);
             }
             draw(g, (o+x)*4-322, fh, filDeFerColor);
-            fh = hauteur;
+            fh = h;
         }
         return surface;
     }
