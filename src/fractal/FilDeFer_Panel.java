@@ -3,9 +3,9 @@ package fractal;
 import java.awt.*;
 import java.util.Random;
 
-import javax.swing.*;
+import javax.swing.JPanel;
 
-public class NewSurface_Panel extends JPanel {
+public class FilDeFer_Panel extends JPanel{
 
     private int a = Parameters.a,
                 b = Parameters.b,
@@ -32,7 +32,7 @@ public class NewSurface_Panel extends JPanel {
         return h;
     }
 
-    public NewSurface_Panel(Menu menu) {;
+    public FilDeFer_Panel(Menu menu) {;
         repaint();
     }
 
@@ -43,9 +43,8 @@ public class NewSurface_Panel extends JPanel {
         
         Random random = new Random(Parameters.g);
 
-        int[][] h = Do.surfaceDeBase((Graphics2D) g, Parameters.m, Parameters.hauteur, Parameters.l, random);
-        h = Do.calculFractal((Graphics2D) g, Parameters.m, Parameters.hauteur, Parameters.d, Parameters.l, random, h);
-        Parameters.cF = h;
+        Do.filDeFer((Graphics2D) g, Parameters.m, Parameters.hauteur, Parameters.d, Parameters.l, random, Parameters.cF);
+        
     }
     
 }

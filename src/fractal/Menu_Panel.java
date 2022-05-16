@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 public class Menu_Panel extends JPanel{
 
     private JButton newSurfaceButton;
+    private JButton filDeFerButton;
 
     public Menu_Panel(Menu menu){
 
@@ -22,7 +23,21 @@ public class Menu_Panel extends JPanel{
 
         newSurfaceButton.setBounds(0, 150, 400, 150);
 
-        add(newSurfaceButton, BorderLayout.NORTH);
+        add(newSurfaceButton);
+
+        filDeFerButton = new JButton("Fil De Fer");
+        
+        filDeFerButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                menu.openFilDeFer();
+            }
+        });
+
+        filDeFerButton.setBounds(0, 300, 400, 150);
+
+        add(filDeFerButton);
+
+        
     }
     
 }
