@@ -1,12 +1,15 @@
-package fractal;
+package fractal.gui;
 
 import java.awt.*;
 import java.util.Random;
 
 import javax.swing.JPanel;
 
-public class Strates_Panel extends JPanel{
-    
+import fractal.Do;
+import fractal.Parameters;
+
+public class FilDeFer_Panel extends JPanel{
+
     private int a = Parameters.a,
                 b = Parameters.b;
     
@@ -31,7 +34,7 @@ public class Strates_Panel extends JPanel{
         return h;
     }
 
-    public Strates_Panel(Menu menu) {;
+    public FilDeFer_Panel(Menu menu) {;
         repaint();
     }
 
@@ -42,6 +45,8 @@ public class Strates_Panel extends JPanel{
         
         Random random = new Random(Parameters.g);
 
-        Do.strates((Graphics2D) g, Parameters.m, Parameters.hauteur, Parameters.d, Parameters.l, random, Parameters.cF);
+        Do.filDeFer((Graphics2D) g, Parameters.m, Parameters.hauteur, Parameters.d, Parameters.l, random, Parameters.cF);
+        
     }
+    
 }

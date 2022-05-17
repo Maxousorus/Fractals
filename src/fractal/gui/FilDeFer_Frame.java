@@ -1,17 +1,16 @@
-package fractal;
+package fractal.gui;
 
 import javax.swing.JFrame;
-import javax.swing.WindowConstants;
 
-public class NewSurface_Frame extends JFrame {
+public class FilDeFer_Frame extends JFrame {
+    
+    private FilDeFer_Panel panel;
 
-    private NewSurface_Panel panel;
-
-    public NewSurface_Frame(Menu menu) {
-        panel = new NewSurface_Panel(menu);
+    public FilDeFer_Frame(Menu menu) {
+        panel = new FilDeFer_Panel(menu);
 
         // Window parameters
-        setTitle("New Surface");
+        setTitle("Fil De Fer");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setBounds(0, 0, 1920, 1080);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

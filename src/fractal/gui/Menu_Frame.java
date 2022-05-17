@@ -1,4 +1,4 @@
-package fractal;
+package fractal.gui;
 
 import javax.swing.JFrame;
 

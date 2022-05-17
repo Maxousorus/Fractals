@@ -1,15 +1,17 @@
-package fractal;
+package fractal.gui;
 
 import java.awt.*;
 import java.util.Random;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 
-public class FilDeFer_Panel extends JPanel{
+import fractal.Do;
+import fractal.Parameters;
+
+public class NewSurface_Panel extends JPanel {
 
     private int a = Parameters.a,
                 b = Parameters.b;
-    
     private int m = Parameters.m; //maille (0 -> 3) 
     private int p = (int)Math.pow(m, 7-m); //pas 
     private int hauteur = Parameters.hauteur; //(10 -> 60)
@@ -31,7 +33,7 @@ public class FilDeFer_Panel extends JPanel{
         return h;
     }
 
-    public FilDeFer_Panel(Menu menu) {;
+    public NewSurface_Panel(Menu menu) {;
         repaint();
     }
 
@@ -42,8 +44,9 @@ public class FilDeFer_Panel extends JPanel{
         
         Random random = new Random(Parameters.g);
 
-        Do.filDeFer((Graphics2D) g, Parameters.m, Parameters.hauteur, Parameters.d, Parameters.l, random, Parameters.cF);
-        
+        int[][] h = Do.surfaceDeBase((Graphics2D) g, Parameters.m, Parameters.hauteur, Parameters.l, random);
+        h = Do.calculFractal((Graphics2D) g, Parameters.m, Parameters.hauteur, Parameters.d, Parameters.l, random, h);
+        Parameters.cF = h;
     }
     
 }
