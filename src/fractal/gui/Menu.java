@@ -6,12 +6,14 @@ public class Menu {
     private NewSurface_Frame newSurfaceFrame;
     private FilDeFer_Frame filDeFerFrame;
     private Strates_Frame stratesFrame;
+    private Ombres_Frame ombresFrame;
 
     public Menu() {
         menuFrame = new Menu_Frame(this);
         newSurfaceFrame = new NewSurface_Frame(this);
         filDeFerFrame = new FilDeFer_Frame(this);
         stratesFrame = new Strates_Frame(this);
+        ombresFrame = new Ombres_Frame(this);
     }
 
     public void openMenu() {
@@ -28,6 +30,10 @@ public class Menu {
     
     public void openStrates() {
         stratesFrame.setVisible(true);
+    }
+
+    public void openOmbres() {
+        ombresFrame.setVisible(true);
     }
 
 }

@@ -8,10 +8,14 @@ public class Do {
     private static int[] move = new int[2];
 
     public static void plot(Graphics g, int x, int y, int c) {
-        Color color = getColor(c);
-        g.setColor(color);
+        plot(g, x, y, getColor(c));
+    }
+
+    public static void plot(Graphics g, int x, int y, Color c) {
+        g.setColor(c);
         g.drawRect(x, y, 1, 1);
     }
+
 
     public static Color getColor(int c){
         Color[] colorlist = Parameters.colorList;
@@ -258,7 +262,8 @@ public class Do {
         }
 
         int nmx;
-        int a;
+        int a = 0;
+        int couleur = 0;
 
         for(int x = 0; x < 128; x++){
             for(int y = 0; y < 127; y++){
@@ -269,7 +274,7 @@ public class Do {
                 }
                 
                 hauteur = h[x][y] + x + y;
-                int couleur = h[x][y];
+                couleur = h[x][y];
                 if(couleur > Parameters.nbcolor){
                     couleur = Parameters.nbcolor;
                 }
@@ -282,12 +287,63 @@ public class Do {
                 if(hauteur > c[a]){
                     move(a*4, c[a]+2);
                     //ici
-                    
                     draw(g, a*4, hauteur, couleur); // peut etre à mettre dans le IF ci dessus
                 }
                 c[a] = hauteur;
             }
         }
+        c = Parameters.c;
+        return surface;
+    }
+
+    public static int[][] ombres(Graphics2D g, int maille, int hauteur, int deviation, int taille, Random random, int[][] surface) { 
+        
+        int[] c = Parameters.c; 
+        int a;
+
+        for(int i = 0; i < 80; i++){
+            c[80-i] = surface[0][i] + i - 2;
+            c[80+i] = surface[i][0] + i - 2;
+        }
+        int o1;
+        int o2;
+        Color couleur;
+
+        for(int y = 0; y < taille; y++){
+            o1 = 0;
+            o2 = 0;
+            for(int x = taille; x > 0; x--){
+                a = 80 - y + x;
+                if(a < 0 || a > 319){
+                    continue;
+                }
+                hauteur = surface[x][y] + x + y;
+                
+                couleur = new Color(32,32,32);
+
+                if(surface[x][y] >= o1)
+                    o1 = surface[x][y] + 1;
+                else
+                    couleur = new Color(66,66,66);
+                
+                if(surface[x][y] >= o2)
+                    o2 = surface[x][y] + 2;
+                else
+                    couleur = new Color(99,99,99);
+
+                if(hauteur < c[a]){
+                    plot(g, a*4, c[a]-2, Color.gray);
+                    //GOTO 1290 mais ????
+                }
+
+                move(a*4,c[a]);
+                draw(g, a*4, hauteur, couleur);
+                c[a] = hauteur + 2;
+                o1 -= 1;
+                o2 -= 2;
+            }
+        }
+
         return surface;
     }
 }

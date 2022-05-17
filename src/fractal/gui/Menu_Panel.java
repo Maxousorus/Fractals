@@ -3,7 +3,6 @@ package fractal.gui;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.event.ActionListener;
-import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 
 public class Menu_Panel extends JPanel{
@@ -11,6 +10,7 @@ public class Menu_Panel extends JPanel{
     private JButton newSurfaceButton;
     private JButton filDeFerButton;
     private JButton stratesButton;
+    private JButton ombresButton;
 
     public Menu_Panel(Menu menu){
 
@@ -50,7 +50,17 @@ public class Menu_Panel extends JPanel{
 
         add(stratesButton);
 
-        
+        ombresButton = new JButton("Ombres");
+
+        ombresButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                menu.openOmbres();
+            }
+        });
+
+        ombresButton.setBounds(0, 600, 400, 150);
+
+        add(ombresButton);
     }
     
 }
