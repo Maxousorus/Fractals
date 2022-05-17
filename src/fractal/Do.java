@@ -195,9 +195,7 @@ public class Do {
     }
 
     public static void draw(Graphics g, int x , int y, int c){
-        Color color = getColor(c);
-        g.setColor(color);
-        g.drawLine(move[0], move[1], x, y);
+        draw(g, x, y, getColor(c));
     }
 
     public static void draw(Graphics g, int x, int y, Color c){
@@ -267,8 +265,9 @@ public class Do {
                 nmx = nm + x + y;
                 a = 80 - y + x;
                 if(a < 0 || a > 319){
-                    a = 0;
+                    continue;
                 }
+                
                 hauteur = h[x][y] + x + y;
                 int couleur = h[x][y];
                 if(couleur > Parameters.nbcolor){
@@ -283,8 +282,10 @@ public class Do {
                 if(hauteur > c[a]){
                     move(a*4, c[a]+2);
                     //ici
+                    
+                    draw(g, a*4, hauteur, couleur); // peut etre à mettre dans le IF ci dessus
                 }
-                draw(g, a*4, hauteur, couleur); // peut etre à mettre dans le IF ci dessus
+                c[a] = hauteur;
             }
         }
         return surface;
