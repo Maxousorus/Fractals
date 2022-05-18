@@ -282,7 +282,7 @@ public class Do {
                     hauteur = nmx;
                 }
                 if(hauteur <= c[a]){
-                    plot(g, a*4, c[a], 0);
+                    //plot(g, a*4, c[a], 0);
                 }
                 if(hauteur > c[a]){
                     move(a*4, c[a]+2);
