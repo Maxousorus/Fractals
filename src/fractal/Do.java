@@ -110,8 +110,8 @@ public class Do {
                     }
 
                     int c = hauteur / n;
-                    if (c > Parameters.nbcolor) {
-                        c = Parameters.nbcolor;
+                    if (c > Parameters.nbcolor-1) {
+                        c = Parameters.nbcolor-1;
                     }
 
                     surface[x][y] = hauteur;
@@ -130,8 +130,8 @@ public class Do {
                     }
 
                     int c = hauteur / n;
-                    if (c > Parameters.nbcolor) {
-                        c = Parameters.nbcolor;
+                    if (c > Parameters.nbcolor-1) {
+                        c = Parameters.nbcolor-1;
                     }
 
                     surface[x][y] = hauteur;
@@ -145,8 +145,8 @@ public class Do {
                     }
 
                     c = hauteur / n;
-                    if (c > Parameters.nbcolor) {
-                        c = Parameters.nbcolor;
+                    if (c > Parameters.nbcolor-1) {
+                        c = Parameters.nbcolor-1;
                     }
 
                     surface[y][x] = hauteur;
@@ -224,7 +224,7 @@ public class Do {
         int[] c = new int[320];
         int h = hauteur;
         int fh = 0;
-        for(int y = 0; y < 128;y = y+2){ //ligne 890
+        for(int y = 0; y < taille;y = y+2){ //ligne 890
             move(o*4-320, c[o+k]);
             k=0;
             o = 160 - y;
@@ -265,8 +265,8 @@ public class Do {
         int a = 0;
         int couleur = 0;
 
-        for(int x = 0; x < 128; x++){
-            for(int y = 0; y < 127; y++){
+        for(int x = 0; x < taille+1; x++){
+            for(int y = 0; y < taille; y++){
                 nmx = nm + x + y;
                 a = 80 - y + x;
                 if(a < 0 || a > 319){
@@ -275,8 +275,8 @@ public class Do {
                 
                 hauteur = h[x][y] + x + y;
                 couleur = h[x][y];
-                if(couleur > Parameters.nbcolor){
-                    couleur = Parameters.nbcolor;
+                if(couleur > Parameters.nbcolor-1){
+                    couleur = Parameters.nbcolor-1;
                 }
                 if(hauteur < nmx){
                     hauteur = nmx;

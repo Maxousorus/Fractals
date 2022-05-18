@@ -11,7 +11,7 @@ public class Parameters {
     public static final int hauteur = 60; //(10 -> 60)
     public static final int d = 3; //deviation (inférieur ou égal au pas pour realisme)
     public static final int g = 13; // graine (quelconque)
-    public static final int l = 128; //(32 - 64 - 128)
+    public static final int l = 300; //(32 - 64 - 128)
     
     public static final int n = hauteur / 16;
 
@@ -25,12 +25,10 @@ public class Parameters {
 
     public static final Graphics g2d  = null;
 
-    public static final Color[] seaGradient = Do.makeGradient(new Color(0,255,255),new Color(0,0,128), 15);
-    public static final Color[] sandGradient = Do.makeGradient(new Color(255,237,0),new Color(202,205,0), 5);
-    public static final Color[] grassGradient = Do.makeGradient(new Color(58,129,0),new Color(106,234,0), 15);
-    public static final Color[] mountainGradient = Do.makeGradient(new Color(255,255,255),new Color(153,153,153), 10);
-
-    //public static final Color[][] allGradients = {{Color.white}, seaGradient, sandGradient, grassGradient, mountainGradient};
+    public static final Color[] seaGradient = Do.makeGradient(new Color(0,0,128), new Color(0,255,255),15);
+    public static final Color[] sandGradient = Do.makeGradient(new Color(202,205,0), new Color(255,237,0),5);
+    public static final Color[] grassGradient = Do.makeGradient(new Color(106,234,0), new Color(58,129,0),15);
+    public static final Color[] mountainGradient = Do.makeGradient(new Color(153,153,153), new Color(255,255,255),10);
 
     public static final Color[][] allGradients = {mountainGradient, grassGradient, sandGradient, seaGradient};
 
