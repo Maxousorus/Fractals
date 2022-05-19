@@ -6,8 +6,8 @@ public class Strates_Frame extends JFrame{
 
     private Strates_Panel panel;
 
-    public Strates_Frame(Menu menu) {
-        panel = new Strates_Panel(menu);
+    public Strates_Frame() {
+        panel = new Strates_Panel();
 
         // Window parameters
         setTitle("Strates");
