@@ -6,8 +6,8 @@ public class FilDeFer_Frame extends JFrame {
     
     private FilDeFer_Panel panel;
 
-    public FilDeFer_Frame(Menu menu) {
-        panel = new FilDeFer_Panel(menu);
+    public FilDeFer_Frame() {
+        panel = new FilDeFer_Panel();
 
         // Window parameters
         setTitle("Fil De Fer");

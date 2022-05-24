@@ -34,7 +34,7 @@ public class FilDeFer_Panel extends JPanel{
         return h;
     }
 
-    public FilDeFer_Panel(Menu menu) {;
+    public FilDeFer_Panel() {
         repaint();
     }
 

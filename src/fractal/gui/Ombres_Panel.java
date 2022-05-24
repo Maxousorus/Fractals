@@ -34,7 +34,7 @@ public class Ombres_Panel extends JPanel{
         return h;
     }
 
-    public Ombres_Panel(Menu menu) {;
+    public Ombres_Panel() {;
         repaint();
     }
 

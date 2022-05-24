@@ -33,7 +33,7 @@ public class NewSurface_Panel extends JPanel {
         return h;
     }
 
-    public NewSurface_Panel(Menu menu) {;
+    public NewSurface_Panel() {;
         repaint();
     }
 

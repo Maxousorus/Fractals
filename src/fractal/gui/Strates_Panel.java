@@ -34,7 +34,7 @@ public class Strates_Panel extends JPanel{
         return h;
     }
 
-    public Strates_Panel(Menu menu) {;
+    public Strates_Panel() {;
         repaint();
     }
 

@@ -6,8 +6,8 @@ public class Ombres_Frame extends JFrame{
 
     private Ombres_Panel panel;
 
-    public Ombres_Frame(Menu menu){
-        panel = new Ombres_Panel(menu);
+    public Ombres_Frame(){
+        panel = new Ombres_Panel();
 
         //Window parameters
         setTitle("Ombres");

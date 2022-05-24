@@ -10,7 +10,7 @@ public class Parameters {
     public static final int p = (int)Math.pow(m, 7-m); //pas 
     public static final int hauteur = 60; //(10 -> 60)
     public static final int d = 3; //deviation (inférieur ou égal au pas pour realisme)
-    public static final int g = 13; // graine (quelconque)
+    public static final int g = 1477; // graine (quelconque)
     public static final int l = 300; //(32 - 64 - 128)
     
     public static final int n = hauteur / 16;

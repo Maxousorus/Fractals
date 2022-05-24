@@ -10,13 +10,14 @@ public class Menu {
 
     public Menu() {
         menuFrame = new Menu_Frame(this);
-        newSurfaceFrame = new NewSurface_Frame(this);
-        filDeFerFrame = new FilDeFer_Frame(this);
-        stratesFrame = new Strates_Frame(this);
-        ombresFrame = new Ombres_Frame(this);
+        newSurfaceFrame = new NewSurface_Frame();
+        filDeFerFrame = new FilDeFer_Frame();
+        stratesFrame = new Strates_Frame();
+        ombresFrame = new Ombres_Frame();
     }
 
     public void openMenu() {
+        menuFrame.pack();
         menuFrame.setVisible(true);
     }
 
