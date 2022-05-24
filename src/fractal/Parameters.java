@@ -11,7 +11,7 @@ public class Parameters {
     public static final int hauteur = 60; //(10 -> 60)
     public static final int d = 3; //deviation (inférieur ou égal au pas pour realisme)
     public static final int g = 1477; // graine (quelconque)
-    public static final int l = 300; //(32 - 64 - 128)
+    public static final int l = 500; //(32 - 64 - 128)
     
     public static final int n = hauteur / 16;
 
