@@ -13,7 +13,7 @@ public class Do {
 
     public static void plot(Graphics g, int x, int y, Color c) {
         g.setColor(c);
-        g.drawRect(x, y, 1, 1);
+        g.drawRect(x, y, 2, 2);
     }
 
 
@@ -224,7 +224,17 @@ public class Do {
         int[] c = new int[320];
         int h = hauteur;
         int fh = 0;
-        for(int y = 0; y < taille;y = y+2){ //ligne 890
+        int space_between_lines;
+        if(taille > 1024)
+            space_between_lines = 80;
+        else if(taille > 512)
+            space_between_lines = 40;
+        else if(taille > 256)
+            space_between_lines = 20;
+        else
+            space_between_lines = 10;
+
+        for(int y = 0; y < taille;y = y + (int)(space_between_lines/1.5)){ //ligne 890
             move(o*4-320, c[o+k]);
             k=0;
             o = 160 - y;
