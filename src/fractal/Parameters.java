@@ -11,11 +11,9 @@ public class Parameters {
     public static final int hauteur = 60; //(10 -> 60)
     public static final int d = 3; //deviation (inférieur ou égal au pas pour realisme)
     public static final int g = 1477; // graine (quelconque)
-    public static final int l = 300; //(32 - 64 - 128)
-    
-    public static final int n = hauteur / 16;
+    public static final int l = 500; //(32 - 64 - 128)
 
-    public static final int[][] h = new int[l+1][l+1];
+    public static int[][] h = new int[l+1][l+1];
 
     public static int[][] cF; //Grille apres calcul fractal
 
@@ -35,6 +33,8 @@ public class Parameters {
     public static final Color[] colorList = Do.mergeColorLists(allGradients);
 
     public static final int nbcolor = colorList.length;
+    
+    public static final int n = hauteur / nbcolor;
 
     public static int randomSeed(){
         if (Parameters.g != 0)

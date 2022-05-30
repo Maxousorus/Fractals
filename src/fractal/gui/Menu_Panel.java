@@ -19,6 +19,7 @@ public class Menu_Panel extends JPanel{
         newSurfaceButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 menu.openNewSurface();
+                filDeFerButton.setEnabled(true);
             }
         });
 
@@ -27,10 +28,12 @@ public class Menu_Panel extends JPanel{
         add(newSurfaceButton);
 
         filDeFerButton = new JButton("Fil De Fer");
+        filDeFerButton.setEnabled(false);
         
         filDeFerButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 menu.openFilDeFer();
+                stratesButton.setEnabled(true);
             }
         });
 
@@ -39,10 +42,12 @@ public class Menu_Panel extends JPanel{
         add(filDeFerButton);
 
         stratesButton = new JButton("Strates");
+        stratesButton.setEnabled(false);
 
         stratesButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 menu.openStrates();
+                ombresButton.setEnabled(true);
             }
         });
 
@@ -51,6 +56,7 @@ public class Menu_Panel extends JPanel{
         add(stratesButton);
 
         ombresButton = new JButton("Ombres");
+        ombresButton.setEnabled(false);
 
         ombresButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {

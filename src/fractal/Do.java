@@ -193,9 +193,9 @@ public class Do {
         return surface;
     }
 
-    public static void move(int x , int y){
+    public static void move(Graphics g, int x , int y){
         move[0] = x;
-        move[1] = y;
+        move[1] = (int) y;
     }
 
     public static void draw(Graphics g, int x , int y, int c){
@@ -204,7 +204,7 @@ public class Do {
 
     public static void draw(Graphics g, int x, int y, Color c){
         g.setColor(c);
-        g.drawLine(move[0], move[1], x, y);
+        g.drawLine(move[0], move[1], x, (int) y);
     }
 
     public static int max(int a,int b){
@@ -218,7 +218,7 @@ public class Do {
         int o = 160;
         int k = 0;
         Color filDeFerColor = Color.BLUE;
-        move(0, 40);
+        move(g, 0, 40);
         draw(g, 320, 0, filDeFerColor);
         draw(g, 640, 40, filDeFerColor);
         int[] c = new int[320];
@@ -234,8 +234,8 @@ public class Do {
         else
             space_between_lines = 10;
 
-        for(int y = 0; y < taille;y = y + (int)(space_between_lines/1.5)){ //ligne 890
-            move(o*4-320, c[o+k]);
+        for(int y = 0; y < taille;y = y + 2){ //ligne 890
+            move(g, o*4-320, c[o+k]);
             k=0;
             o = 160 - y;
             if(o < 0){
@@ -247,6 +247,7 @@ public class Do {
                 h = max(c[x+o], taille);
                 c[x+o] = h;
                 draw(g, (o+x)*4-320, h, filDeFerColor);
+                move(g, (o+x)*4-320, h);
             }
             draw(g, (o+x)*4-322, fh, filDeFerColor);
             fh = h;
@@ -258,7 +259,7 @@ public class Do {
     public static int[][] strates(Graphics2D g, int maille, int hauteur, int deviation, int taille, Random random, int[][] surface) {
         int n = hauteur / Parameters.nbcolor;
         int nm = n*4;
-        int[][] h = Parameters.cF;
+        int[][] h = surface;
         int[] c = Parameters.c;
         for(int i = 0; i < 80; i++){
             hauteur = h[0][i] + i;
@@ -295,7 +296,7 @@ public class Do {
                     //plot(g, a*4, c[a], 0);
                 }
                 if(hauteur > c[a]){
-                    move(a*4, c[a]+2);
+                    move(g, a*4, c[a]+2);
                     //ici
                     draw(g, a*4, hauteur, couleur); // peut etre à mettre dans le IF ci dessus
                 }
@@ -346,7 +347,7 @@ public class Do {
                     //GOTO 1290 mais ????
                 }
 
-                move(a*4,c[a]);
+                move(g, a*4,c[a]);
                 draw(g, a*4, hauteur, couleur);
                 c[a] = hauteur + 2;
                 o1 -= 1;
